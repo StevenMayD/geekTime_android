@@ -2,5 +2,5 @@
     <string name="app_name">geekTime</string>
     <string name="title_activity_main_bottom_navigation">MainBottomNavigationActivity</string>
     <string name="title_home">首页</string>
-    <string name="title_dashboard">我的</string>
+    <string name="title_mine">我的</string>
 </resources>
