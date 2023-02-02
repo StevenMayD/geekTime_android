@@ -2,6 +2,7 @@ package com.example.geektime.activity;
 
 import android.os.Bundle;
 
+import com.example.geektime.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +11,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.geektime.activity.databinding.ActivityMainBottomNavigationBinding;
+import com.example.geektime.databinding.ActivityMainBottomNavigationBinding;
 
 public class MainBottomNavigationActivity extends AppCompatActivity {
 

@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.geektime.activity.databinding.FragmentNotificationsBinding;
+import com.example.geektime.databinding.FragmentNotificationsBinding;
 
 public class NotificationsFragment extends Fragment {
 
