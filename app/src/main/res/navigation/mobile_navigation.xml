@@ -5,6 +5,7 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
 
+    <!--  主体fragment配置：导航标题内容，fragment主体文件 选择 -->
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.geektime.activity.ui.home.HomeFragment"

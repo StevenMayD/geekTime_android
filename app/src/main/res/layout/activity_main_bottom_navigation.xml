@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize">
 
+    <!-- 底部tab部分 -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"
@@ -16,8 +17,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:itemTextColor="@color/black"
         app:menu="@menu/bottom_nav_menu" />
+        <!--
+            app:itemTextColor 配置tab item项 字体颜色为黑色
+            app:menu 配置 菜单项文件为 bottom_nav_menu.xml
+        -->
 
+    <!--  主体页面部分  -->
     <fragment
         android:id="@+id/nav_host_fragment_activity_main_bottom_navigation"
         android:name="androidx.navigation.fragment.NavHostFragment"

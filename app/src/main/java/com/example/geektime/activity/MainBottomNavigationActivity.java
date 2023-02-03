@@ -25,6 +25,8 @@ public class MainBottomNavigationActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView.setItemIconTintList(null); /* 配置点击tab后 无背景颜色 */
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(

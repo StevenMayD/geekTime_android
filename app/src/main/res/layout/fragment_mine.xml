@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.ui.mine.MineFragment">
 
+    <!--  fragment内容配置：页面内容 -->
     <TextView
         android:id="@+id/text_mine"
         android:layout_width="match_parent"
