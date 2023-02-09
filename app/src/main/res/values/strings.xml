@@ -3,4 +3,5 @@
     <string name="title_activity_main_bottom_navigation">MainBottomNavigationActivity</string>
     <string name="title_home">首页</string>
     <string name="title_mine">我的</string>
+    <string name="bar_string_placeholder">""</string>
 </resources>

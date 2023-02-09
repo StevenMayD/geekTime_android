@@ -1,13 +1,13 @@
-package com.hjq.bar.style;
+package com.example.geektime.tools.navigation.titleBar.style;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 
-import com.hjq.bar.R;
-import com.hjq.bar.SelectorDrawable;
-import com.hjq.bar.TitleBarSupport;
+import com.example.geektime.R;
+import com.example.geektime.tools.navigation.titleBar.SelectorDrawable;
+import com.example.geektime.tools.navigation.titleBar.TitleBarSupport;
 
 /**
  *    author : Android 轮子哥

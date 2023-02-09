@@ -1,4 +1,4 @@
-package com.hjq.bar;
+package com.example.geektime.tools.navigation.titleBar;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -16,10 +16,11 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.hjq.bar.style.LightBarStyle;
-import com.hjq.bar.style.NightBarStyle;
-import com.hjq.bar.style.RippleBarStyle;
-import com.hjq.bar.style.TransparentBarStyle;
+import com.example.geektime.R;
+import com.example.geektime.tools.navigation.titleBar.style.LightBarStyle;
+import com.example.geektime.tools.navigation.titleBar.style.NightBarStyle;
+import com.example.geektime.tools.navigation.titleBar.style.RippleBarStyle;
+import com.example.geektime.tools.navigation.titleBar.style.TransparentBarStyle;
 
 /**
  *    author : Android 轮子哥
@@ -104,13 +105,13 @@ public class TitleBar extends FrameLayout
         mRightView = mCurrentStyle.createRightView(context);
         mLineView = mCurrentStyle.createLineView(context);
 
-        mTitleView.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+        mTitleView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.MATCH_PARENT, Gravity.CENTER_HORIZONTAL));
-        mLeftView.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+        mLeftView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.MATCH_PARENT, Gravity.START));
-        mRightView.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+        mRightView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.MATCH_PARENT, Gravity.END));
-        mLineView.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+        mLineView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 mCurrentStyle.getLineSize(context), Gravity.BOTTOM));
 
         // 设置图标显示的重心
@@ -358,7 +359,7 @@ public class TitleBar extends FrameLayout
     }
 
     /**
-     * {@link View.OnClickListener}
+     * {@link OnClickListener}
      */
 
     @Override
@@ -395,7 +396,7 @@ public class TitleBar extends FrameLayout
 
     @Override
     protected LayoutParams generateDefaultLayoutParams() {
-        return new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        return new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
     }
 
     /**

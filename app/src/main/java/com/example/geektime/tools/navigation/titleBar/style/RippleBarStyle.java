@@ -1,10 +1,10 @@
-package com.hjq.bar.style;
+package com.example.geektime.tools.navigation.titleBar.style;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 
-import com.hjq.bar.TitleBarSupport;
+import com.example.geektime.tools.navigation.titleBar.TitleBarSupport;
 
 /**
  *    author : Android 轮子哥

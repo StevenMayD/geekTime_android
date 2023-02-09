@@ -1,4 +1,4 @@
-package com.hjq.bar.style;
+package com.example.geektime.tools.navigation.titleBar.style;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,8 +12,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.hjq.bar.ITitleBarStyle;
-import com.hjq.bar.TitleBarSupport;
+import com.example.geektime.tools.navigation.titleBar.ITitleBarStyle;
+import com.example.geektime.tools.navigation.titleBar.TitleBarSupport;
 
 /**
  *    author : Android 轮子哥

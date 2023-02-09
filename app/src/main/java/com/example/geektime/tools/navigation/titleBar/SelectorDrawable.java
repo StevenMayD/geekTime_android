@@ -1,4 +1,4 @@
-package com.hjq.bar;
+package com.example.geektime.tools.navigation.titleBar;
 
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;

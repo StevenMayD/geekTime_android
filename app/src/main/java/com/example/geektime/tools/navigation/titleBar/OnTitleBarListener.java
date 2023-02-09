@@ -1,4 +1,4 @@
-package com.hjq.bar;
+package com.example.geektime.tools.navigation.titleBar;
 
 /**
  *    author : Android 轮子哥
