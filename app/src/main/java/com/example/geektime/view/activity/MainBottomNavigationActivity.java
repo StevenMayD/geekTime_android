@@ -1,4 +1,4 @@
-package com.example.geektime.activity;
+package com.example.geektime.view.activity;
 
 import android.os.Bundle;
 

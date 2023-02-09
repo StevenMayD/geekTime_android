@@ -1,4 +1,4 @@
-package com.example.geektime.activity.ui.mine;
+package com.example.geektime.view.activity.ui.mine;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

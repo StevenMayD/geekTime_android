@@ -1,16 +1,16 @@
-package com.example.geektime.activity.ui.mine;
+package com.example.geektime.view.activity.ui.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class MineViewModel extends ViewModel {
+public class HomeViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public MineViewModel() {
+    public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("这是'我的'fragment");
+        mText.setValue("这是'首页'fragment");
     }
 
     public LiveData<String> getText() {

@@ -14,7 +14,7 @@
         android:theme="@style/Theme.GeekTime"
         tools:targetApi="31">
         <activity
-            android:name=".activity.MainBottomNavigationActivity"
+            android:name=".view.activity.MainBottomNavigationActivity"
             android:exported="true" >
             <!-- 配置 android:label="@string/title_activity_main_bottom_navigation"
                  会使得app名称 叫MainBottomNavigationActivity 而不是geekTime  -->

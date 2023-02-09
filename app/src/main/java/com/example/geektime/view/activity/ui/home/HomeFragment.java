@@ -1,4 +1,4 @@
-package com.example.geektime.activity.ui.home;
+package com.example.geektime.view.activity.ui.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
