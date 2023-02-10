@@ -7,4 +7,5 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="main_JIKE">#FFFFA500</color> <!-- 极客app 主色调: 8位数最前方FF 代表透明度  -->
 </resources>
