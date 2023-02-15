@@ -18,6 +18,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.geektime.databinding.ActivityMainBottomNavigationBinding;
+import com.google.android.material.navigation.NavigationBarView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -58,7 +59,7 @@ public class MainBottomNavigationActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
 
         // 监听tab点击
-        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        navView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 String title = "";
