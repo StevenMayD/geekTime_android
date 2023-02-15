@@ -6,13 +6,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--  自定义导航
+        高度为导航默认高度：layout_height="wrap_content"
+        自动布局 顶部为父视图顶部 app:layout_constraintTop_toTopOf="parent"
+    -->
     <com.example.geektime.tools.navigation.NavigationBar
         android:id="@+id/titleBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <!-- 底部tab部分 -->
+    <!--  主体页面部分
+        高度自适应 那就先设置为0：layout_height="0dp"
+        顶部为导航的底部：layout_constraintTop_toBottomOf="@+id/titleBar"
+        底部为tab菜单栏的顶部：layout_constraintBottom_toTopOf="@+id/nav_view"
+
+    -->
+    <fragment
+        android:id="@+id/nav_host_fragment_activity_main_bottom_navigation"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintTop_toBottomOf="@+id/titleBar"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:navGraph="@navigation/mobile_navigation"
+        tools:layout_editor_absoluteX="28dp" />
+
+    <!-- 底部tab部分
+        左边紧靠父视图：layout_constraintLeft_toLeftOf="parent"
+        配置tab item项 字体颜色为黑色：itemTextColor="@color/black"
+        配置 菜单项文件为 bottom_nav_menu.xml：menu="@menu/bottom_nav_menu"
+    -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"
@@ -25,22 +51,5 @@
         app:layout_constraintRight_toRightOf="parent"
         app:itemTextColor="@color/black"
         app:menu="@menu/bottom_nav_menu" />
-        <!--
-            app:itemTextColor 配置tab item项 字体颜色为黑色
-            app:menu 配置 菜单项文件为 bottom_nav_menu.xml
-        -->
-
-    <!--  主体页面部分  -->
-    <fragment
-        android:id="@+id/nav_host_fragment_activity_main_bottom_navigation"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@id/nav_view"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/mobile_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
