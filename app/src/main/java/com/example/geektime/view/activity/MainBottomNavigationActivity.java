@@ -3,22 +3,22 @@ package com.example.geektime.view.activity;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.example.geektime.R;
 import com.example.geektime.tools.navigation.NavigationBar;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.geektime.databinding.ActivityMainBottomNavigationBinding;
-import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -58,21 +58,33 @@ public class MainBottomNavigationActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        // 监听tab点击
-        navView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        /** 监听navController的fragment切换变化
+         * */
+        navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                String title = "";
-                switch (item.getItemId()) {
-                    case R.id.navigation_home:
-                    case R.id.navigation_mine:
-                        title = item.getTitle().toString(); // 获取当前的tab菜单标题
-                        break;
-                }
+            public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
+                String title = destination.getLabel().toString(); // 获取当前fragment标题
                 titleBar.setTitle(title); // 设置导航主题文字内容
-                return true; // 这里必须返回true才能响应点击事件
             }
         });
+
+        /** 监听navView的tab点击选择
+         * 此方法能生效，但会覆盖navView源码中 原本的tab点击选择的监听方法（源码中会切换fragment），导致fragment不进行切换
+         * */
+//        navView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                String title = "";
+//                switch (item.getItemId()) {
+//                    case R.id.navigation_home:
+//                    case R.id.navigation_mine:
+//                        title = item.getTitle().toString(); // 获取当前的tab菜单标题
+//                        break;
+//                }
+//                titleBar.setTitle(title); // 设置导航主题文字内容
+//                return true; // 这里必须返回true才能响应点击事件
+//            }
+//        });
 
         initData();
         loadView();
