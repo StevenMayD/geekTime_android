@@ -7,6 +7,22 @@
     tools:context=".view.activity.ui.home.HomeFragment">
 
     <!--  fragment内容配置：页面内容 -->
+
+    <!--  轮播图
+        圆角：banner_radius="10dp"
+        左、右边距：ayout_marginStart="0dp" ayout_marginEnd="0dp"
+        轮播切换间隔时间2秒：banner_loop_time="2000"
+      -->
+    <com.youth.banner.Banner
+        android:id="@+id/main_banner"
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+        app:banner_radius="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        app:banner_loop_time="2000"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/text_home"
         android:layout_width="match_parent"
