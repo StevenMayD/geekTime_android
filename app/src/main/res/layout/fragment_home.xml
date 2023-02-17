@@ -23,6 +23,13 @@
         app:banner_loop_time="2000"
         tools:ignore="MissingConstraints" />
 
+    <ListView
+        android:id="@+id/homeListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_banner" />
+
     <TextView
         android:id="@+id/text_home"
         android:layout_width="match_parent"
