@@ -58,7 +58,9 @@ public class HomeListViewAdapter extends BaseAdapter {
             // 取出view的tag属性对象
             courseViewHolder = (CourseViewHolder) view.getTag();
         }
-        // 赋值viewHolder的textview（即view的textview）为listdata数组第i条数据（Bean的name属性）
+        /** 赋值viewHolder的textview（即view的textview）为listdata数组第i条数据（Bean的name属性）
+         *  Adapter中的with参数，为外界的activity
+         * */
         GlideApp.with(context)
                 .load(dataList.get(i).getImageUrl())
                 .into(courseViewHolder.imageView);

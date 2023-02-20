@@ -14,10 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.example.geektime.R;
-import com.example.geektime.adapter.HomeListViewAdapter;
 import com.example.geektime.adapter.MineListViewAdapter;
 import com.example.geektime.databinding.FragmentMineBinding;
+import com.example.geektime.tools.glide.GlideApp;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,7 +51,13 @@ public class MineFragment extends Fragment {
 
     private void loadHeadView() {
         ImageView imageView = binding.headImage;
-        imageView.setImageResource(R.drawable.head);
+//        imageView.setImageResource(R.drawable.head);
+
+        // fragment的with参数为 root或 其所属的activity
+        GlideApp.with(this.getActivity())
+                .load(R.drawable.head) // glide加载本地图片
+                .transform(new CircleCrop())
+                .into(imageView);
     }
 
     private void loadListView() {
