@@ -1,11 +1,14 @@
 package com.example.geektime.view.activity.ui.mine;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -19,6 +22,7 @@ import com.example.geektime.R;
 import com.example.geektime.adapter.MineListViewAdapter;
 import com.example.geektime.databinding.FragmentMineBinding;
 import com.example.geektime.tools.glide.GlideApp;
+import com.example.geektime.view.activity.LoginActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,15 +34,26 @@ public class MineFragment extends Fragment {
     private FragmentMineBinding binding;
     private View root;
     private List<Map> listData; // listView数据为 键值对组成的数组 (键值对的值 有字符串和int 就不指定类型了)
+    private Activity activity;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentMineBinding.inflate(inflater, container, false);
         root = binding.getRoot();
+        activity = this.getActivity();
 
         loadTextView(); // 加载文本框视图
         loadHeadView(); // 加载头部视图
         loadListView(); // 加载列表视图
+
+        Button loginBtn = root.findViewById(R.id.button);
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // fragment跳转另一个activity（实际上是其所属activity跳转activity）
+                startActivity(new Intent(activity, LoginActivity.class));
+            }
+        });
 
         return root;
     }
