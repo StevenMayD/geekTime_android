@@ -117,6 +117,7 @@ public class MainBottomNavigationActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        // 这里没有使用价值：页面返回data有值 但requestCode不是MineFragment跳转时 设定的1000
         if (requestCode == 1000) {
             String title = data.getStringExtra("title");
             Log.d("来自", title + " 页面的返回");

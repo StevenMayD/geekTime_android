@@ -124,7 +124,8 @@ public class MineFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 1000) {
+        // 由于手势右滑也能返回页面，data没有设置传参
+        if (requestCode == 1000 && data != null) {
             String title = data.getStringExtra("title");
             Log.d("来自", title + " 页面的返回");
         }
