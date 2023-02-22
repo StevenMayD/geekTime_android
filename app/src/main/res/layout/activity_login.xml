@@ -7,6 +7,14 @@
     android:background="@color/light_gray"
     tools:context=".view.activity.LoginActivity">
 
+    <com.example.geektime.tools.navigation.NavigationBar
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="登录"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="151dp"
@@ -15,7 +23,7 @@
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/titleBar" />
 
     <!--  文本框默认占位文本和颜色 设置 -->
     <EditText
@@ -26,6 +34,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:hint="请输入手机号"
+        android:textSize="17sp"
         android:textColorHint="@color/main_JIKE"
         android:drawableLeft="@drawable/icon_phone"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,6 +49,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:hint="请输入密码"
+        android:textSize="17sp"
         android:password="true"
         android:textColorHint="@color/main_JIKE"
         android:drawableLeft="@drawable/icon_pwd"

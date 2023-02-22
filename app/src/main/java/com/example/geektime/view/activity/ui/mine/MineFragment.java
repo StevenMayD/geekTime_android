@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -50,9 +51,17 @@ public class MineFragment extends Fragment {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle loginBundle = new Bundle();
+                loginBundle.putString("title", "我的");
+
                 // fragment跳转另一个activity（实际上是其所属activity跳转activity）
-                startActivity(new Intent(activity, LoginActivity.class));
+                Intent intent = new Intent(activity, LoginActivity.class);
+                intent.putExtras(loginBundle); // 传参
+//                startActivity(intent); // 无需获取下一个页面传参的话
+                // 无需获取下一个页面传参的话 设置了requestCode才会调用onActivityResult方法
+                startActivityForResult(intent, 1000);
             }
+
         });
 
         return root;
@@ -108,6 +117,17 @@ public class MineFragment extends Fragment {
         item4.put("image",R.drawable.icon_document);
         item4.put("title", "我的拼团");
         listData.add(item4);
+    }
+
+    @Override
+    // 这里fragment的onActivityResult会调用，fragment所属的MainBottomNavigationActivity的onActivityResult也会调用
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1000) {
+            String title = data.getStringExtra("title");
+            Log.d("来自", title + " 页面的返回");
+        }
     }
 
     @Override

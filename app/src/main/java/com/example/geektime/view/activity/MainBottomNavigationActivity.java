@@ -1,8 +1,10 @@
 package com.example.geektime.view.activity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.geektime.R;
@@ -108,10 +110,16 @@ public class MainBottomNavigationActivity extends AppCompatActivity {
             * 而是用Color系统库里的颜色 直接使用Color.WHITE 即可
             * */
             titleBar.setBackgroundColor(getResources().getColor(R.color.main_JIKE));
-
         }
-
-
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1000) {
+            String title = data.getStringExtra("title");
+            Log.d("来自", title + " 页面的返回");
+        }
+    }
 }
