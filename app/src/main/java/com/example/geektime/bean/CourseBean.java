@@ -104,4 +104,20 @@ public class CourseBean {
     public void setStudentCount(int studentCount) {
         this.studentCount = studentCount;
     }
+
+    @Override
+    public String toString() {
+        return "CourseBean{" +
+                "imageUrl='" + imageUrl + '\'' +
+                ", name='" + name + '\'' +
+                ", desc='" + desc + '\'' +
+                ", teacher='" + teacher + '\'' +
+                ", detail='" + detail + '\'' +
+                ", courseList='" + courseList + '\'' +
+                ", price=" + price +
+                ", total=" + total +
+                ", update=" + update +
+                ", studentCount=" + studentCount +
+                '}';
+    }
 }

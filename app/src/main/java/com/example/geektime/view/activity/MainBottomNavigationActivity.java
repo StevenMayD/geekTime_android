@@ -20,6 +20,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.geektime.databinding.ActivityMainBottomNavigationBinding;
+import com.example.geektime.view.activity.ui.home.HomeFragment;
+import com.example.geektime.view.fragment.CourseDetailFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import butterknife.BindView;
@@ -111,6 +113,14 @@ public class MainBottomNavigationActivity extends AppCompatActivity {
             * */
             titleBar.setBackgroundColor(getResources().getColor(R.color.main_JIKE));
         }
+
+        // 给FragmeLayoutd动态加载初始的fragment（课程详情）
+        CourseDetailFragment courseDetailFragment = new CourseDetailFragment();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.CourseFragment, courseDetailFragment)
+                .addToBackStack(null)
+                .commit();
     }
 
     @Override

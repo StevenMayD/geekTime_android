@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.geektime.R;
@@ -19,6 +21,8 @@ import com.example.geektime.adapter.HomeListViewAdapter;
 import com.example.geektime.bean.CourseBean;
 import com.example.geektime.databinding.FragmentHomeBinding;
 import com.example.geektime.tools.glide.GlideApp;
+import com.example.geektime.view.fragment.CourseDetailFragment;
+import com.example.geektime.view.fragment.CoursePurchasedFragment;
 import com.youth.banner.Banner;
 import com.youth.banner.adapter.BannerImageAdapter;
 import com.youth.banner.holder.BannerImageHolder;
@@ -121,9 +125,24 @@ public class HomeFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Log.d("点击了", "onItemClick: 第" + i + "行");
+                CourseBean selectCourse = courseData.get(i);
+                Log.d("点击了", "onItemClick: 第" + i + "行" + "数据为：" + selectCourse);
+
+                // 创建已购课程fragment
+                CoursePurchasedFragment coursePurchasedFragment = new CoursePurchasedFragment();
+                // 切换fragment
+                replaceFragment(coursePurchasedFragment);
             }
         });
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        // activity(fragment所属的)的CourseFragment，切换fragment
+        getActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.CourseFragment, fragment)
+                .addToBackStack(null)
+                .commit();
     }
 
     private List<CourseBean> fakeListData() {

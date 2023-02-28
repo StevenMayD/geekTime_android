@@ -52,4 +52,14 @@
         app:itemTextColor="@color/black"
         app:menu="@menu/bottom_nav_menu" />
 
+    <FrameLayout
+        android:id="@+id/CourseFragment"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_weight="1"
+        tools:ignore="MissingConstraints"
+        tools:layout="@layout/fragment_course_detail"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="409dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
