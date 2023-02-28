@@ -4,4 +4,7 @@
     <string name="title_home">首页</string>
     <string name="title_mine">我的</string>
     <string name="bar_string_placeholder">""</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_course_detail_fragment">你好，课程详情</string>
+    <string name="hello_course_purchased_fragment">你好，已购课程</string>
 </resources>
